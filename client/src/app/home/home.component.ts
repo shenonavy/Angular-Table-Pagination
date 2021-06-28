@@ -41,7 +41,6 @@ export class HomeComponent implements OnInit {
   }
 
   itemPageChange(event: any){
-    debugger
     this.itemsPerPage = +event.target.value;
     this.load();
   }
