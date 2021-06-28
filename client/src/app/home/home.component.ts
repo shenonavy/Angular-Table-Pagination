@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   total!: number;
   page = 1;
   itemsPerPage = 5;
+  itemsPerPages = [{ value: '5', display: '5' }, { value: '10', display: '10' }];
 
   constructor(private employeeService: EmployeeService) { }
 
@@ -36,6 +37,12 @@ export class HomeComponent implements OnInit {
 
   pageChanged(event: PageChangedEvent): void {
     this.page = event.page;
+    this.load();
+  }
+
+  itemPageChange(event: any){
+    debugger
+    this.itemsPerPage = +event.target.value;
     this.load();
   }
 

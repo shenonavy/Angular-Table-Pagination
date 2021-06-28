@@ -16,8 +16,7 @@ namespace API.Controllers
         {
             int fromRows = 0;
             fromRows = ((page - 1) * perPage);
-            var employees = Seeds.LoadData().ToList();
-            employees = employees.Skip(fromRows).Take(perPage).ToList();
+            var employees = Seeds.LoadData().Skip(fromRows).Take(perPage).ToList();
             return employees;
         }
         [HttpGet("getTotalRecord")]
